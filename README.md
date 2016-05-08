@@ -3,7 +3,7 @@
 Developing data-centric single page web applications (SPA) requires backend REST services to access the databases. Carbite is a ulta-lightweight PHP microservice framework to write REST services.
 
 
-# configuring carbite
+# Configuring carbite
 
 
 
