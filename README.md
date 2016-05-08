@@ -9,23 +9,50 @@ Developing data-centric single page web applications (SPA) requires backend REST
 
 # Carbite Hello World
 
+```php
+require_once("./carbite.php");
+
+Carbite::GET("/hello",function($req,$res){
+	$res->Set("Hello World");
+});
+
+Carbite::Start();
+```
+
 # HTTP methods supported by carbite
 
 ### GET
 
 ```php
-Carbite::GET("/hello",function($req,$res){
-	$returnObj = new Customer();
-	$res->Set($returnObj);
+Carbite::GET("/customer/@id",function($req,$res){
+	$cust = new Customer(); //create a mock object for customer
+	$cust->id = $req->Params()->id;
+	$cust->name = "just a dummy customer";
+	
+	$res->setJSON($cust); //return the response as JSON
 });
 ```
 
-### POST
+### POST, PUT, DELETE
 
+These three request types work in the same way, to get the object that is recieved in the body, you can use the $req->Body() method.
 
-### PUT
+```php
+Carbite::POST("/customer/@id",function($req,$res){
+	$custObj = $req->Body();
+	$res->setJSON($custObj); //echo the post object
+});
 
-### DELETE
+Carbite::PUT("/customer/@id",function($req,$res){
+	$custObj = $req->Body();
+	$res->setJSON($custObj); //echo the post object
+});
+
+Carbite::DELETE("/customer/@id",function($req,$res){
+	$custObj = $req->Body();
+	$res->setJSON($custObj); //echo the post object
+});
+```
 
 
 # Licence
