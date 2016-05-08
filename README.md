@@ -1,4 +1,4 @@
-# carbite - A PHP microservice for REST services
+# Carbite - A PHP Microframework for REST Services
 
 Developing data-centric single page web applications (SPA) requires backend REST services to access the databases. Carbite is a ulta-lightweight PHP microservice framework to write REST services.
 
@@ -7,7 +7,7 @@ Developing data-centric single page web applications (SPA) requires backend REST
 
 
 
-# carbite Hello World
+# Carbite Hello World
 
 # HTTP methods supported by carbite
 
